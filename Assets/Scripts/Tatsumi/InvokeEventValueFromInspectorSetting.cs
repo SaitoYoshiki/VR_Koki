@@ -5,7 +5,7 @@ using UnityEngine;
 public class InvokeEventValueFromInspectorSetting : MonoBehaviour {
 	[SerializeField, Tooltip("対象")]
 	EventValue target = null;
-	[SerializeField, Tooltip("前回更新時の値")]
+	[SerializeField, Tooltip("前回更新時の値"), ReadOnly]
 	float prevVal = 0.0f;
 
 	void Start() {
