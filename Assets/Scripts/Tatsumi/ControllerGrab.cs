@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControllerGrab : MonoBehaviour {
 	[SerializeField, Tooltip("コントローラー")]
-	Valve.VR.SteamVR_TrackedObject trackedObj = null;
+	SteamVR_TrackedObject trackedObj = null;
 
 	[SerializeField, Tooltip("握っているか")]
 	bool isGrab = false;
