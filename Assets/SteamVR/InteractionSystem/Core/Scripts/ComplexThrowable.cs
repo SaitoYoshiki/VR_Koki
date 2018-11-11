@@ -46,8 +46,8 @@ namespace Valve.VR.InteractionSystem
 		{
 			for ( int i = 0; i < holdingHands.Count; i++ )
 			{
-                if (holdingHands[i].IsGrabEnding(this.gameObject))
-                {
+				if ( !holdingHands[i].GetStandardInteractionButton() )
+				{
 					PhysicsDetach( holdingHands[i] );
 				}
 			}
@@ -59,9 +59,9 @@ namespace Valve.VR.InteractionSystem
 		{
 			if ( holdingHands.IndexOf( hand ) == -1 )
 			{
-				if ( hand.isActive )
+				if ( hand.controller != null )
 				{
-					hand.TriggerHapticPulse( 800 );
+					hand.controller.TriggerHapticPulse( 800 );
 				}
 			}
 		}
@@ -72,9 +72,9 @@ namespace Valve.VR.InteractionSystem
 		{
 			if ( holdingHands.IndexOf( hand ) == -1 )
 			{
-				if (hand.isActive)
+				if ( hand.controller != null )
 				{
-					hand.TriggerHapticPulse( 500 );
+					hand.controller.TriggerHapticPulse( 500 );
 				}
 			}
 		}
@@ -83,17 +83,15 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void HandHoverUpdate( Hand hand )
 		{
-            GrabTypes startingGrabType = hand.GetGrabStarting();
-
-            if (startingGrabType != GrabTypes.None)
+			if ( hand.GetStandardInteractionButtonDown() )
 			{
-				PhysicsAttach( hand, startingGrabType );
+				PhysicsAttach( hand );
 			}
 		}
 
 
 		//-------------------------------------------------
-		private void PhysicsAttach( Hand hand, GrabTypes startingGrabType )
+		private void PhysicsAttach( Hand hand )
 		{
 			PhysicsDetach( hand );
 
@@ -116,7 +114,7 @@ namespace Valve.VR.InteractionSystem
 			if ( holdingBody == null )
 				return;
 
-			// Create a fixed joint from the hand to the holding body
+			// Create a fixed joint form the hand to the holding body
 			if ( attachMode == AttachMode.FixedJoint )
 			{
 				Rigidbody handRigidbody = Util.FindOrAddComponent<Rigidbody>( hand.gameObject );
@@ -134,7 +132,7 @@ namespace Valve.VR.InteractionSystem
 			offset = Mathf.Min( offset.magnitude, 1.0f ) * offset.normalized;
 			holdingPoint = holdingBody.transform.InverseTransformPoint( holdingBody.worldCenterOfMass + offset );
 
-			hand.AttachObject( this.gameObject, startingGrabType, attachmentFlags );
+			hand.AttachObject( this.gameObject, attachmentFlags );
 
 			// Update holding list
 			holdingHands.Add( hand );
@@ -150,13 +148,13 @@ namespace Valve.VR.InteractionSystem
 
 			if ( i != -1 )
 			{
-				// Detach this object from the hand
+				// Detach this object form the hand
 				holdingHands[i].DetachObject( this.gameObject, false );
 
 				// Allow the hand to do other things
 				holdingHands[i].HoverUnlock( null );
 
-				// Delete any existing joints from the hand
+				// Delete any existing joints form the hand
 				if ( attachMode == AttachMode.FixedJoint )
 				{
 					Destroy( holdingHands[i].GetComponent<FixedJoint>() );

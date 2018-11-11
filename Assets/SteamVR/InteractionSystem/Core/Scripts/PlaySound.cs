@@ -109,7 +109,7 @@ namespace Valve.VR.InteractionSystem
 
 
 		//-------------------------------------------------
-		// Play a random clip from those available
+		// Play a random clip form those available
 		//-------------------------------------------------
 		public void Play()
 		{
@@ -207,7 +207,7 @@ namespace Valve.VR.InteractionSystem
 
 			if ( this.waveFile.Length > 0 )
 			{
-				// randomly assign a wave file from the array into the audioSource clip property
+				// randomly assign a wave file form the array into the audioSource clip property
 				audioSource.clip = this.waveFile[Random.Range( 0, waveFile.Length )];
 				clip = audioSource.clip;
 			}
