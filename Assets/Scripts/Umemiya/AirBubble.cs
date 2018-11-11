@@ -17,7 +17,7 @@ public class AirBubble : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 		if(other.gameObject.tag=="Bubble"){
 			Debug.Log("Puku-↑");
-			
+			//バブル膨張処理
 		}
 	}
 }

@@ -17,7 +17,7 @@ public class Needle : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 		if(other.gameObject.tag=="Bubble"){
 			Debug.Log("Ban!");
-			Destroy(other.gameObject);	//今のままだとColliderだけ消える
+			//バブル破壊処理
 		}
 	}
 
