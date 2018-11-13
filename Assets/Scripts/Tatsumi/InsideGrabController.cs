@@ -27,6 +27,7 @@ public class InsideGrabController : MonoBehaviour {
 
 	[SerializeField, Tooltip("Inspectorから掴み状態を変更する")]
 	bool inspectorGrab = false;
+	bool prevInspectorGrab = false;
 
 	[SerializeField, Tooltip("回転させるRigidbody")]
 	Rigidbody grabRb = null;
@@ -39,15 +40,17 @@ public class InsideGrabController : MonoBehaviour {
 
 	void Update() {
 		// Inspectorから掴み状態を変更する
-		if (inspectorGrab != IsGrabbing) {
-			if (inspectorGrab) {
-				Grab();
+		if (inspectorGrab != prevInspectorGrab) {
+			if (inspectorGrab != IsGrabbing) {
+				if (inspectorGrab) {
+					Grab();
+				} else {
+					Release();
+				}
+				inspectorGrab = IsGrabbing;
 			}
-			else {
-				Release();
-			}
-			inspectorGrab = IsGrabbing;
 		}
+		prevInspectorGrab = inspectorGrab;
 
 		// コントローラーの入力を処理
 		if (trackedObj.gameObject.activeInHierarchy) {
