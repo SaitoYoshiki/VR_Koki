@@ -12,6 +12,6 @@ public class TrackedObjectChild : MonoBehaviour {
 			transform.localPosition = Vector3.zero;
 			transform.localRotation = Quaternion.identity;
 		}
-		enabled = false;
+//		enabled = false;
 	}
 }

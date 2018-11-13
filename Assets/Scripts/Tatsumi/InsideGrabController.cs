@@ -66,7 +66,7 @@ public class InsideGrabController : MonoBehaviour {
 		// 掴んだまま動かす
 		if (IsGrabbing) {
 			// 現在の掴んでいる方向を取得
-			Vector3 nowGrabVec = (transform.position - grabObj.transform.position).normalized; ;
+			Vector3 nowGrabVec = (transform.position - grabObj.transform.position).normalized;
 
 			// 前回の掴んでいる方向からの差を取得
 			Vector3 euler = (Quaternion.LookRotation(nowGrabVec) * Quaternion.Inverse(Quaternion.LookRotation(grabVec))).eulerAngles;

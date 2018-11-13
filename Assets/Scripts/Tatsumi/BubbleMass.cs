@@ -17,6 +17,7 @@ public class BubbleMass : MonoBehaviour {
 	}
 
 	public void SettingMass() {
-		target.mass = (baseVal + (bubbleMassVal.Val * changeMass));
+		//target.mass = (baseVal + (bubbleMassVal.Val * changeMass));
+		target.mass = (baseVal * Mathf.Pow(bubbleMassVal.Val, changeMass));
 	}
 }
