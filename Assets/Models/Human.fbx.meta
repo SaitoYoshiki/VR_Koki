@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 33321caf7d4d02a4fa15405525b27ed5
-timeCreated: 1542069062
+guid: 6ea5a937560df5247a27677521b99551
+timeCreated: 1542075936
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -35,6 +35,7 @@ ModelImporter:
     100054: Bone_R.013_end
     100056: Human
     100058: //RootNode
+    100060: Sphere
     400000: Armature
     400002: Bone
     400004: Bone.003
@@ -65,11 +66,16 @@ ModelImporter:
     400054: Bone_R.013_end
     400056: Human
     400058: //RootNode
-    2100000: Skin.002
-    2100002: Clothes
-    2100004: eye
-    2100006: Pants
-    4300000: Human
+    400060: Sphere
+    2100000: materialSphere
+    2100002: Skin.002
+    2100004: Clothes
+    2100006: eye
+    2100008: Pants
+    2300000: Sphere
+    3300000: Sphere
+    4300000: Sphere
+    4300002: Human
     7400000: Armature|Move
     7400002: Armature|Wait
     9500000: //RootNode
@@ -140,7 +146,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
