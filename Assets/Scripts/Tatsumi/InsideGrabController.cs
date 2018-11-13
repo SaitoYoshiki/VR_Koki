@@ -83,7 +83,7 @@ public class InsideGrabController : MonoBehaviour {
 
 			// 掴んでいる位置にオブジェクトを移動
 			if (grabPoint) {
-				grabPoint.position = (grabObj.transform.position + (nowGrabVec * grabObj.Radius * 0.5f));
+				grabPoint.position = (grabObj.transform.position + (nowGrabVec * grabObj.Diameter.Val * 0.5f));
 			}
 
 			//// 回転
@@ -95,9 +95,10 @@ public class InsideGrabController : MonoBehaviour {
 		// 掴めるオブジェクトを探す
 		foreach (var grabbableObj in grabCheckObjList) {
 			float dis = Vector3.Distance(transform.position, grabbableObj.transform.position);
-			if (Mathf.Abs(dis - grabbableObj.Radius) <= grabbableObj.CanGrabRangeDis) {
-				// 掴む
-				IsGrabbing = true;
+//			if (Mathf.Abs(dis - grabbableObj.Radius) <= grabbableObj.CanGrabRangeDis) {
+			if (Mathf.Abs(dis - grabbableObj.Diameter.Val * 0.5f) <= grabbableObj.CanGrabRangeDis) {
+					// 掴む
+					IsGrabbing = true;
 				grabObj = grabbableObj;
 				grabRb = grabObj.GetComponentInParent<Rigidbody>();
 
