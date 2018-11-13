@@ -14,10 +14,9 @@ public class Needle : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter(Collision other){
-		if(other.gameObject.tag=="Bubble"){
-			Debug.Log("Ban!");
-			//バブル破壊処理
+	void OnTriggerEnter(Collider other){
+		if(other.gameObject.tag=="Player"){
+			other.transform.parent.GetComponent<BubbleBreak>().Break();
 		}
 	}
 
