@@ -560,5 +560,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24003d6aaaf0fe44ae01fa9884738b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointObj: {fileID: 0}
+  pointObj: {fileID: 408470}
   relativeObj: {fileID: 408470}
