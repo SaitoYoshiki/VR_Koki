@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AirBubble : MonoBehaviour {
 
+	public float upScale;
+
 	// Use this for initialization
 	void Start () {
 
@@ -14,10 +16,9 @@ public class AirBubble : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter(Collision other){
-		if(other.gameObject.tag=="Bubble"){
-			Debug.Log("Puku-↑");
-			//バブル膨張処理
+	void OnTriggerEnter(Collider other){
+		if(other.gameObject.tag=="Player"){
+			other.transform.parent.GetComponent<EventValue>().Val=upScale;
 		}
 	}
 }
