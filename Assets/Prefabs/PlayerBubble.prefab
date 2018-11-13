@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 54020266923599600}
   - component: {fileID: 114745197364224366}
   - component: {fileID: 114097086652213374}
+  - component: {fileID: 114647837775880506}
   m_Layer: 0
   m_Name: PlayerBubble
   m_TagString: Untagged
@@ -248,6 +249,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 5
   canGrabRangeDis: 5
+--- !u!114 &114647837775880506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253294875189228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2b49bf0cf2d614c8b114ad2c0b43f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakEv:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114745197364224366
 MonoBehaviour:
   m_ObjectHideFlags: 1
