@@ -12,6 +12,10 @@ public class BubbleMass : MonoBehaviour {
 	[SerializeField, Tooltip("値によって変化する質量")]
 	float changeMass = 100.0f;
 
+	void Start() {
+		SettingMass();
+	}
+
 	public void SettingMass() {
 		target.mass = (baseVal + (bubbleMassVal.Val * changeMass));
 	}
