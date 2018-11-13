@@ -74,7 +74,7 @@ MonoBehaviour:
   inspectorGrab: 0
   grabRb: {fileID: 0}
   grabPoint: {fileID: 0}
-  rotSence: 1
+  rotSence: 1000
 --- !u!135 &135446631916883628
 SphereCollider:
   m_ObjectHideFlags: 1
