@@ -20,7 +20,7 @@ public class ControllerGrab : MonoBehaviour {
 	[SerializeField, Tooltip("Inspectorから握るアクションを行う")]
 	bool inspectorGrab = false;
 
-	void Updaet() {
+	void Update() {
 		if (inspectorGrab != IsGrab) {
 			IsGrab = inspectorGrab;
 		}
