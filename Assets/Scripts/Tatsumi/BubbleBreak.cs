@@ -14,4 +14,7 @@ public class BubbleBreak : MonoBehaviour {
 	public void Break() {
 		BreakEv.Invoke();
 	}
+	public void DestroyBreak() {
+		Destroy(gameObject);
+	}
 }
