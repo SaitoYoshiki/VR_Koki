@@ -18,7 +18,7 @@ public class AirBubble : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if(other.gameObject.tag=="Player"){
-			other.transform.parent.GetComponent<EventValue>().Val=upScale;
+			other.transform.parent.GetComponent<EventValue>().Val+=upScale;
 		}
 	}
 }
