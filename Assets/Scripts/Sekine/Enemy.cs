@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
 
 	public GameObject playerObj;
 
+	[SerializeField]
+	private GameObject modelObj;
+
 	private Rigidbody rb;
 
 	private float MoveSpeed = 10.0f;
@@ -33,12 +36,12 @@ public class Enemy : MonoBehaviour
 
 	void Move()
 	{
-		//プレイヤーの方向を向く
-		Vector3 vec = playerObj.transform.position - this.transform.position;
-		this.transform.rotation = Quaternion.LookRotation(vec);
+
+		Vector3 vec = playerObj.transform.position - modelObj.transform.position;
+		modelObj.transform.rotation = Quaternion.LookRotation(vec);
 
 		//回転させる
-		rb.AddTorque(this.transform.right * MoveSpeed);
+		rb.AddTorque(modelObj.transform.right* MoveSpeed);
 	}
 
 }
