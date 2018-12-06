@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
 	private Rigidbody rb;
 
+	[SerializeField]
 	private float MoveSpeed = 10.0f;
 
 	void Start ()
