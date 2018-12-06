@@ -321,7 +321,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 3
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -339,7 +339,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54020266923599600}
-  rate: 1
+  boundRate: 2
+  powerfulRate: 1
+  enemy: {fileID: 0}
+  lastBoundTime: 0
+  boundEnemyStopTime: 1
 --- !u!114 &114097086652213374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,7 +416,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1253294875189228}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28e2d28f43d471341bea25a520c0eb2f, type: 3}
   m_Name: 
@@ -420,7 +424,7 @@ MonoBehaviour:
   bubbleMassVal: {fileID: 114899355117019574}
   target: {fileID: 54020266923599600}
   baseVal: 0
-  changeMass: 1000
+  changeMass: 1
 --- !u!114 &114827804900496098
 MonoBehaviour:
   m_ObjectHideFlags: 1

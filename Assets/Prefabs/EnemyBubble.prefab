@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 114706163324566640}
   - component: {fileID: 114390944739448070}
   - component: {fileID: 114260210538834380}
+  - component: {fileID: 114460265383473318}
   m_Layer: 0
   m_Name: EnemyBubble
   m_TagString: Untagged
@@ -333,7 +334,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 20
+  m_AngularDrag: 3
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -345,7 +346,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1984212081136052}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28e2d28f43d471341bea25a520c0eb2f, type: 3}
   m_Name: 
@@ -353,7 +354,7 @@ MonoBehaviour:
   bubbleMassVal: {fileID: 114383771329349560}
   target: {fileID: 54471549134073734}
   baseVal: 0
-  changeMass: 1000
+  changeMass: 1
 --- !u!114 &114260210538834380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -366,7 +367,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54471549134073734}
-  rate: 1
+  boundRate: 20
+  powerfulRate: 1
+  enemy: {fileID: 114706163324566640}
+  lastBoundTime: 0
+  boundEnemyStopTime: 1
 --- !u!114 &114265969285655660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -453,6 +458,20 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   breakParticle: {fileID: 0}
   breakParent: {fileID: 0}
+--- !u!114 &114460265383473318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1984212081136052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60aed3e1e621024ba1ff6d5304836ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 54471549134073734}
+  limit: 3
+  prevVel: 0
 --- !u!114 &114598580434165112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,7 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 0}
-  modelObj: {fileID: 1984212081136052}
+  modelObj: {fileID: 1255591351064752}
   MoveSpeed: 10
 --- !u!114 &114857534118586758
 MonoBehaviour:
