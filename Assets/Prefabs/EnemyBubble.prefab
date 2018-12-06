@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 114460265383473318}
   m_Layer: 0
   m_Name: EnemyBubble
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54471549134073734}
-  boundRate: 20
+  selfBoundRate: 1
+  colBoundRate: 1
   powerfulRate: 1
   enemy: {fileID: 114706163324566640}
   lastBoundTime: 0

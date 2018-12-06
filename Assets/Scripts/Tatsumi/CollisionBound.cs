@@ -6,7 +6,9 @@ public class CollisionBound : MonoBehaviour {
 	[SerializeField]
 	Rigidbody rb = null;
 	[SerializeField, Tooltip("被吹っ飛び倍率")]
-	float boundRate = 1.0f;
+	float selfBoundRate = 1.0f;
+	[SerializeField, Tooltip("与吹っ飛び倍率")]
+	float colBoundRate = 1.0f;
 	[SerializeField, Tooltip("打ち勝ち度")]
 	float powerfulRate = 1.0f;
 
@@ -27,17 +29,27 @@ public class CollisionBound : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision _col) {
 		Rigidbody colRb = _col.gameObject.GetComponent<Rigidbody>();
-		if (!colRb) return;
+
 		CollisionBound colBound = _col.gameObject.GetComponent<CollisionBound>();
 		if (!colBound) return;
 
+		if (!rb) return;
+
 		Vector3 selfToColVec = (_col.transform.position - transform.position).normalized;
 
-		float selfPower = Vector3.Dot(rb.velocity, selfToColVec);
-		float colPower = Vector3.Dot(colRb.velocity, -selfToColVec);
-		if ((selfPower * rb.mass * powerfulRate) < (colPower * colRb.mass * colBound.powerfulRate)) {
-			Debug.Log("Hit Lose " + name + "\n" + (-selfToColVec * colPower * boundRate));
-			rb.AddForce((-selfToColVec * colPower * boundRate), ForceMode.VelocityChange);
+		bool forcible = false;
+		float colPower = 0.0f;
+		if (!colRb) {
+			forcible = true;
+		} else {
+			float selfPower = Vector3.Dot(rb.velocity, selfToColVec);
+			colPower = Vector3.Dot(colRb.velocity, -selfToColVec);
+			forcible = (selfPower * rb.mass * powerfulRate) < (colPower * colRb.mass * colBound.powerfulRate);
+		}
+
+		if (forcible) {
+			Debug.Log("Hit Lose " + name + "\n" + (-selfToColVec * colPower * selfBoundRate * colBound.colBoundRate));
+			rb.AddForce((-selfToColVec * colPower * selfBoundRate * colBound.colBoundRate), ForceMode.Impulse);
 			lastBoundTime = Time.time;
 			if (enemy) {
 				enemy.enabled = false;

@@ -339,7 +339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54020266923599600}
-  boundRate: 2
+  selfBoundRate: 1
+  colBoundRate: 1
   powerfulRate: 1
   enemy: {fileID: 0}
   lastBoundTime: 0
@@ -384,8 +385,9 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  breakParticle: {fileID: 0}
-  breakParent: {fileID: 0}
+  breakParticle: {fileID: 1409305209115062, guid: b845e81f9271a77409c8ece88b659878,
+    type: 2}
+  breakParent: {fileID: 4333245970832534}
 --- !u!114 &114354364411238038
 MonoBehaviour:
   m_ObjectHideFlags: 1
