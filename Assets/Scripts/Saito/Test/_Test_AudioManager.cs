@@ -27,7 +27,7 @@ public class _Test_AudioManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            kickSE.Play();
+            kickSE.PlayOneShot(kickSE.clip);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
