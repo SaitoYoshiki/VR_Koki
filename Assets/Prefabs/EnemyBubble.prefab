@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 135195550000801694}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 114460265383473318}
   m_Layer: 0
   m_Name: EnemyBubble
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54471549134073734}
-  selfBoundRate: 1
+  selfBoundRate: 100
   colBoundRate: 1
   powerfulRate: 1
   enemy: {fileID: 114706163324566640}
@@ -457,8 +457,9 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  breakParticle: {fileID: 0}
-  breakParent: {fileID: 0}
+  breakParticle: {fileID: 1409305209115062, guid: 2799208fb06aba94d8a16cd830589b6f,
+    type: 2}
+  breakParent: {fileID: 4984482975223244}
 --- !u!114 &114460265383473318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -471,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54471549134073734}
-  limit: 3
+  limit: 0.5
   prevVel: 0
 --- !u!114 &114598580434165112
 MonoBehaviour:
