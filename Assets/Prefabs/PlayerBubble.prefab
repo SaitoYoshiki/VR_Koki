@@ -75,9 +75,27 @@ GameObject:
   - component: {fileID: 114097086652213374}
   - component: {fileID: 114170414864972914}
   - component: {fileID: 114027839349336480}
+  - component: {fileID: 114955111307091152}
   m_Layer: 0
   m_Name: PlayerBubble
   m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1259504482701954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4385770793763070}
+  - component: {fileID: 135684235238359042}
+  - component: {fileID: 114792589196103396}
+  m_Layer: 0
+  m_Name: SearchCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,15 +184,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1253294875189228}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4996011726210468}
   - {fileID: 4020851154610184}
   - {fileID: 4609370143199194}
   - {fileID: 4274591376054460}
+  - {fileID: 4385770793763070}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4385770793763070
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259504482701954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4333245970832534}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4609370143199194
 Transform:
@@ -427,6 +459,17 @@ MonoBehaviour:
   target: {fileID: 54020266923599600}
   baseVal: 0
   changeMass: 1
+--- !u!114 &114792589196103396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259504482701954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4756f93b9d7233b49a82cfe0371c2925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114827804900496098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -486,6 +529,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114955111307091152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253294875189228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0456fe94dc3b63f4eabd0ea9844a8532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eye: {fileID: 0}
+  warningScr: {fileID: 0}
 --- !u!114 &114988178749088904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -510,6 +566,18 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135684235238359042
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259504482701954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135782680031413064
 SphereCollider:
