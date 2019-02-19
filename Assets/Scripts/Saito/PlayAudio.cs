@@ -19,4 +19,9 @@ public class PlayAudio : MonoBehaviour
     {
         audioSource.Play();
     }
+
+    public void Stop()
+    {
+        audioSource.Stop();
+    }
 }
