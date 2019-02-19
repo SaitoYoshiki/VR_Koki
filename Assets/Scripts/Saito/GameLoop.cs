@@ -8,11 +8,14 @@ public class GameLoop : MonoBehaviour
 
     GameObject clearCanvas;
 
+    CircleFade fade;
+
     [SerializeField]
     AudioSource resultBGM;
 
     private void Start()
     {
+        fade = FindObjectOfType<CircleFade>();
         clearCanvas = GameObject.Find("[CameraRig]/Camera (head)/ClearCanvas");
 
         gameState = FindObjectOfType<GameState>();
@@ -44,13 +47,33 @@ public class GameLoop : MonoBehaviour
             yield return null;
         }
 
+        fade.ChangeFadeState = CircleFade.FadeState.SetOut;
+
+        while (true)
+        {
+            if (fade.ChangeFadeState == CircleFade.FadeState.Complete)
+            {
+                break;
+            }
+            yield return null;
+        }
+
         UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
     }
 
 
     IEnumerator GameStartCoroutine()
     {
-        yield return null;
+        fade.ChangeFadeState = CircleFade.FadeState.SetIn;
+
+        while(true)
+        {
+            if(fade.ChangeFadeState == CircleFade.FadeState.Complete)
+            {
+                break;
+            }
+            yield return null;
+        }
     }
    
 
@@ -61,7 +84,7 @@ public class GameLoop : MonoBehaviour
 
     IEnumerator GameoverEffectCoroutine()
     {
-        yield return null;
+        yield return new WaitForSeconds(2.0f);
     }
 
 
@@ -89,6 +112,7 @@ public class GameLoop : MonoBehaviour
 
             yield return null;
         }
-        yield return null;
+
+        yield return new WaitForSeconds(2.0f);
     }
 }
