@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 114027839349336480}
   - component: {fileID: 114734080218525610}
   - component: {fileID: 114422257429903502}
+  - component: {fileID: 114844681164506774}
   m_Layer: 0
   m_Name: PlayerBubble
   m_TagString: Player
@@ -581,6 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2b49bf0cf2d614c8b114ad2c0b43f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   breakEv:
     m_PersistentCalls:
       m_Calls:
@@ -742,6 +744,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 82348517970841444}
+--- !u!114 &114844681164506774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253294875189228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7ba9c540f03004e822406c8753d06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameClear: 0
+  isGameOver: 0
+  enemyCnt: 0
 --- !u!114 &114899355117019574
 MonoBehaviour:
   m_ObjectHideFlags: 1
