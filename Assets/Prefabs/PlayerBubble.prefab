@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4232732921176030}
   - component: {fileID: 65853225780753014}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NoScalingCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,6 +613,7 @@ MonoBehaviour:
   breakParticle: {fileID: 1495226109355734, guid: afae604ce444d1243a3034db553dc3bb,
     type: 2}
   breakParent: {fileID: 4333245970832534}
+  isBreaked: 0
 --- !u!114 &114354364411238038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -690,7 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diameter: {fileID: 114899355117019574}
-  canGrabRangeDis: 0.5
+  canGrabRangeDis: 1
 --- !u!114 &114734080218525610
 MonoBehaviour:
   m_ObjectHideFlags: 1
