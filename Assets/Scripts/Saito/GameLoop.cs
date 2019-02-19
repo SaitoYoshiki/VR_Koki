@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class GameLoop : MonoBehaviour
 {
+    GameState gameState;
+
     private void Start()
     {
+        gameState = FindObjectOfType<GameState>();
         StartCoroutine(GameLoopCoroutine());
     }
     
@@ -50,7 +53,7 @@ public class GameLoop : MonoBehaviour
 
     bool IsGameover()
     {
-        return false;
+        return gameState.IsGameOver;
     }
 
     IEnumerator GameoverEffectCoroutine()
@@ -61,7 +64,7 @@ public class GameLoop : MonoBehaviour
 
     bool IsClear()
     {
-        return false;
+        return gameState.IsGameClear;
     }
 
     IEnumerator ClearEffectCoroutine()
