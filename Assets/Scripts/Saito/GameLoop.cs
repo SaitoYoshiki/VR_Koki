@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class GameLoop : MonoBehaviour
 {
+    GameState gameState;
+
+    GameObject clearCanvas;
+
+    [SerializeField]
+    AudioSource resultBGM;
+
     private void Start()
     {
+        clearCanvas = GameObject.Find("[CameraRig]/Camera (head)/ClearCanvas");
+
+        gameState = FindObjectOfType<GameState>();
         StartCoroutine(GameLoopCoroutine());
     }
     
@@ -50,7 +60,7 @@ public class GameLoop : MonoBehaviour
 
     bool IsGameover()
     {
-        return false;
+        return gameState.IsGameOver;
     }
 
     IEnumerator GameoverEffectCoroutine()
@@ -61,11 +71,28 @@ public class GameLoop : MonoBehaviour
 
     bool IsClear()
     {
-        return false;
+        return gameState.IsGameClear;
     }
 
     IEnumerator ClearEffectCoroutine()
     {
+        resultBGM.Play();
+
+        float time = 0.0f;
+
+        clearCanvas.SetActive(true);
+        while(true)
+        {
+            time += 1.0f / 1.0f * Time.deltaTime;
+            clearCanvas.GetComponent<CanvasGroup>().alpha = time;
+
+            if(time >= 1.0f)
+            {
+                break;
+            }
+
+            yield return null;
+        }
         yield return null;
     }
 }
