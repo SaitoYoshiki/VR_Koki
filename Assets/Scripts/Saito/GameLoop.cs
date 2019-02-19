@@ -17,25 +17,55 @@ public class GameLoop : MonoBehaviour
     {
         yield return StartCoroutine(GameStartCoroutine());
         
-        Debug.Log("ゲーム：開始");
-        yield return new WaitForSeconds(2.0f);
-        Debug.Log("ゲーム：終了");
+        while(true)
+        {
+            if(IsGameover())
+            {
+                yield return StartCoroutine(GameoverEffectCoroutine());
+                break;
+            }
 
-        yield return StartCoroutine(GameEndCoroutine());
+            if (IsClear())
+            {
+                yield return StartCoroutine(ClearEffectCoroutine());
+                break;
+            }
+
+            yield return null;
+        }
+
+        yield return StartCoroutine(FadeCoroutine());
     }
 
 
-    public IEnumerator GameStartCoroutine()
+    IEnumerator GameStartCoroutine()
     {
-        Debug.Log("ゲーム開始の演出：開始");
-        yield return new WaitForSeconds(2.0f);
-        Debug.Log("ゲーム開始の演出：終了");
+        yield return null;
     }
 
-    public IEnumerator GameEndCoroutine()
+    IEnumerator FadeCoroutine()
     {
-        Debug.Log("ゲーム終了の演出：開始");
-        yield return new WaitForSeconds(2.0f);
-        Debug.Log("ゲーム終了の演出：終了");
+        yield return null;
+    }
+
+    bool IsGameover()
+    {
+        return false;
+    }
+
+    IEnumerator GameoverEffectCoroutine()
+    {
+        yield return null;
+    }
+
+
+    bool IsClear()
+    {
+        return false;
+    }
+
+    IEnumerator ClearEffectCoroutine()
+    {
+        yield return null;
     }
 }
