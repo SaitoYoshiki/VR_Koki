@@ -14,11 +14,11 @@ public class Needle : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter(Collider other){
-		if(other.gameObject.tag=="Player"){
-			other.transform.parent.GetComponent<BubbleBreak>().Break();
-		}
-	}
+//	void OnTriggerEnter(Collider other){
+//		if(other.gameObject.tag=="Player"){
+//			other.transform.parent.GetComponent<BubbleBreak>().Break();
+//		}
+//	}
 	void OnCollisionEnter(Collision other) {
 //		if (other.gameObject.tag == "Player") {
 			//			other.transform.parent.GetComponent<BubbleBreak>().Break();
