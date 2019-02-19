@@ -34,11 +34,19 @@ public class BubbleBreak : MonoBehaviour {
 		}
 	}
 
+	[SerializeField, Tooltip("既に破裂したか")]
+	bool isBreaked = false;
+
 	public void Break() {
 		// 敵が全滅していればプレイヤーは死なない
 		if (GameSt.IsGameClear && (type == BubbleType.PlayerBubble)) {
 			return;
 		}
+
+		if (isBreaked) {
+			return;
+		}
+		isBreaked = true;
 
 		BreakEv.Invoke();
 		if (breakParticle) {
@@ -46,8 +54,13 @@ public class BubbleBreak : MonoBehaviour {
 		}
 
 		// 泡の種類による処理
-		if (type != BubbleType.Other) {
-			
+		switch (type) {
+		case BubbleType.PlayerBubble:
+			GameSt.PlayerBubbleBreak();
+			break;
+		case BubbleType.EnemyBubble:
+			GameSt.EnemyBubbleBreak();
+			break;
 		}
 	}
 	public void DestroyBreak(Transform _target) {

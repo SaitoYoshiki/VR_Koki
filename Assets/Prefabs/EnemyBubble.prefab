@@ -13,7 +13,7 @@ Prefab:
   m_IsPrefabParent: 1
 --- !u!1 &1021224623712430
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -455,7 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4458968370167408}
   - component: {fileID: 135195550000801694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -732,7 +732,6 @@ Transform:
   m_Children:
   - {fileID: 4966042186272872}
   - {fileID: 4580510892597646}
-  - {fileID: 4660819521872674}
   m_Father: {fileID: 4189107031988072}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -791,7 +790,7 @@ Transform:
   - {fileID: 4528656923577562}
   - {fileID: 4113292953331868}
   m_Father: {fileID: 4984482975223244}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4278393671060714
 Transform:
@@ -901,7 +900,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4984482975223244}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4485744007820296
 Transform:
@@ -992,11 +991,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021224623712430}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 2.8784688, z: 0}
-  m_LocalScale: {x: 300, y: 300, z: 300}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: -0.010660291, z: 0}
+  m_LocalScale: {x: 51, y: 50.99997, z: 50.99997}
   m_Children: []
-  m_Father: {fileID: 4113292953331868}
+  m_Father: {fileID: 4984482975223244}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4670887790483100
@@ -1165,6 +1164,7 @@ Transform:
   m_Children:
   - {fileID: 4278393671060714}
   - {fileID: 4351209440676734}
+  - {fileID: 4660819521872674}
   - {fileID: 4189107031988072}
   - {fileID: 4458968370167408}
   m_Father: {fileID: 0}
@@ -1649,6 +1649,7 @@ MonoBehaviour:
   breakParticle: {fileID: 1495226109355734, guid: afae604ce444d1243a3034db553dc3bb,
     type: 2}
   breakParent: {fileID: 4984482975223244}
+  isBreaked: 0
 --- !u!114 &114410885380232042
 MonoBehaviour:
   m_ObjectHideFlags: 1
