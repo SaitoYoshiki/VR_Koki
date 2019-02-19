@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diameter: {fileID: 114899355117019574}
-  canGrabRangeDis: 1
+  canGrabRangeDis: 0.9
 --- !u!114 &114734080218525610
 MonoBehaviour:
   m_ObjectHideFlags: 1
