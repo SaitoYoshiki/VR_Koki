@@ -455,7 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4458968370167408}
   - component: {fileID: 135195550000801694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Enemy
   m_Icon: {fileID: 0}

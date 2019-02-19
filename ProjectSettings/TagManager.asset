@@ -16,8 +16,8 @@ TagManager:
   - 
   - 
   - GrabbableObject
-  - 
-  - 
+  - PlayerFallSafety
+  - Enemy
   - 
   - 
   - 
