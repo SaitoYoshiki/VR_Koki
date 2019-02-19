@@ -37,6 +37,8 @@ public class GameState : MonoBehaviour {
 		enemyCnt--;
 
 		// 敵が全滅したら
-		IsGameClear = true;
+		if (enemyCnt <= 0) {
+			IsGameClear = true;
+		}
 	}
 }
