@@ -20,10 +20,10 @@ public class Needle : MonoBehaviour {
 		}
 	}
 	void OnCollisionEnter(Collision other) {
-		if (other.gameObject.tag == "Player") {
+//		if (other.gameObject.tag == "Player") {
 			//			other.transform.parent.GetComponent<BubbleBreak>().Break();
 			other.transform.GetComponentInParent<SelectionBase>().GetComponentInChildren<BubbleBreak>().Break();
-		}
+//		}
 	}
 
 }

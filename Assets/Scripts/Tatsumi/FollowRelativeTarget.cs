@@ -16,7 +16,7 @@ public class FollowRelativeTarget : MonoBehaviour {
 		//		transform.position += move;
 		float posY = transform.position.y;
 		Vector3 pos = (pointObj.position - (relativeObj.position - transform.position));
-		pos.y = posY;
+//		pos.y = posY;
 		transform.position = pos;
 	}
 }

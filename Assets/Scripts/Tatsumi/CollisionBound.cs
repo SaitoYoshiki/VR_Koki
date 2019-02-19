@@ -11,6 +11,8 @@ public class CollisionBound : MonoBehaviour {
 	float colBoundRate = 1.0f;
 	[SerializeField, Tooltip("打ち勝ち度")]
 	float powerfulRate = 1.0f;
+	[SerializeField, Tooltip("衝突時のパーティクルのプレハブ")]
+	GameObject particlePrefab = null;
 
 	[SerializeField]
 	Enemy enemy = null;
@@ -47,8 +49,16 @@ public class CollisionBound : MonoBehaviour {
 			forcible = (selfPower * rb.mass * powerfulRate) < (colPower * colRb.mass * colBound.powerfulRate);
 		}
 
+		SelectionBase colBase = _col.collider.GetComponentInParent<SelectionBase>();
+		string colName = "";
+		if (colBase) {
+			colName = colBase.name;
+		} else {
+			colName = _col.collider.name;
+		}
+
 		if (forcible) {
-			Debug.Log("Hit Lose " + name + "\n" + (-selfToColVec * colPower * selfBoundRate * colBound.colBoundRate));
+			Debug.Log("Hit Lose " + name + " Win " + colName + "\n" + (-selfToColVec * colPower * selfBoundRate * colBound.colBoundRate));
 			rb.AddForce((-selfToColVec * colPower * selfBoundRate * colBound.colBoundRate), ForceMode.Impulse);
 			lastBoundTime = Time.time;
 			if (enemy) {
@@ -56,8 +66,15 @@ public class CollisionBound : MonoBehaviour {
 			}
 		}
 		else {
-			Debug.Log("Hit Win " + name);
+			Debug.Log("Hit Win " + name + " Lose " + colName);
 			rb.AddForce(Vector3.zero, ForceMode.VelocityChange);
+		}
+
+		// 衝突位置にパーティクルを発生させる
+		if (particlePrefab) {
+			Transform particle = Instantiate(particlePrefab).transform;
+			particle.position = _col.contacts[0].point;
+			particle.LookAt(transform);
 		}
 	}
 }
