@@ -44,7 +44,7 @@ public class GameLoop : MonoBehaviour
             yield return null;
         }
 
-        yield return StartCoroutine(FadeCoroutine());
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
     }
 
 
@@ -52,11 +52,7 @@ public class GameLoop : MonoBehaviour
     {
         yield return null;
     }
-
-    IEnumerator FadeCoroutine()
-    {
-        yield return null;
-    }
+   
 
     bool IsGameover()
     {
