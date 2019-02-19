@@ -8,6 +8,9 @@ public class GameLoop : MonoBehaviour
 
     GameObject clearCanvas;
 
+    [SerializeField]
+    AudioSource resultBGM;
+
     private void Start()
     {
         clearCanvas = GameObject.Find("[CameraRig]/Camera (head)/ClearCanvas");
@@ -73,6 +76,8 @@ public class GameLoop : MonoBehaviour
 
     IEnumerator ClearEffectCoroutine()
     {
+        resultBGM.Play();
+
         float time = 0.0f;
 
         clearCanvas.SetActive(true);
