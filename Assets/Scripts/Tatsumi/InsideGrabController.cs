@@ -38,7 +38,22 @@ public class InsideGrabController : MonoBehaviour {
 	[SerializeField, Tooltip("回転感度")]
 	float rotSence = 1.0f;
 
+	GameState gameSt = null;
+	GameState GameSt {
+		get {
+			if (!gameSt) {
+				gameSt = FindObjectOfType<GameState>();
+			}
+			return gameSt;
+		}
+	}
+
 	void Update() {
+		// ゲームオーバー中は動けない
+		if (GameSt.IsGameOver) {
+			return;
+		}
+
 		// Inspectorから掴み状態を変更する
 		if (inspectorGrab != prevInspectorGrab) {
 			if (inspectorGrab != IsGrabbing) {
