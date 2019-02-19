@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4357454191804136}
   - component: {fileID: 114889877998965064}
   m_Layer: 0
-  m_Name: God
+  m_Name: GameMainManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f795e3129dd976943b3163987600df0e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f053776fb3b1dbc44a5b1724fcaa7a9e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
